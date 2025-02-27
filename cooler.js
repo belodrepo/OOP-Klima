@@ -49,7 +49,7 @@ class Cooler {
     }
 }
 
-const myCooler = new Cooler(5, 7, 2.0, 2);
+const myCooler = new Cooler(5, 6, 2.3, 3);
 console.log(`Légköbméter: ${myCooler.getRoomVolume()} m3`);
 console.log(`Hűtási teljesítmény: ${myCooler.getCoolingPower()} W`);
 console.log(`Besorolás: ${myCooler.getInsulationCategory()}`);
