@@ -1,3 +1,5 @@
+//Objektum orientált klíma berendezés teljesítmény kiszámító alkalmazás
+
 class Cooler {
     constructor(w, l, h, c) {
         this.width = w;
