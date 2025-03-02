@@ -4,3 +4,4 @@ coolarr.forEach((elem, i) => {
     console.log(elem);
     console.log(i);
 });
+

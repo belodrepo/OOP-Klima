@@ -19,6 +19,7 @@ class Cooler {
 
     getRoomVolume = () => this.width * this.length * this.height;
 
+    
     getCoolingPower = () => {
 
         this.coolarr.forEach((elem, i) => {
@@ -81,7 +82,7 @@ class Cooler {
     }
 }
 
-const myCooler = new Cooler(5, 4, 2.3, 3);
+const myCooler = new Cooler(5, 4, 2.5, 2);
 console.log(`Számított légköbméter: ${myCooler.getRoomVolume()} m3`);
 console.log(`Szigetelési besorolás: ${myCooler.getInsulationCategory()}`);
 console.log(`Szükséges hűtési teljesítmény igény: ${myCooler.getCoolingPower() / 1000} kW`);
