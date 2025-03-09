@@ -106,10 +106,10 @@ class AirConditioner extends Cooler {
         return acceptedPower;
     }
 }
-const myAirConditioner = new AirConditioner(6, 4, 2.4, 2);
+const myAirConditioner = new AirConditioner(6, 4, 2.4, 3);
 
 console.log(`Számított légköbméter: ${myAirConditioner.getRoomVolume().toFixed(2)} m3`);
 console.log(`Szigetelési besorolás: ${myAirConditioner.getInsulationCategory()}`);
 console.log(`Szükséges hűtési teljesítmény: ${(myAirConditioner.getCoolingPower() / 1000).toFixed(2)} kW`);
 console.log(`Szükséges fűtési teljesítmény: ${(myAirConditioner.getHeatingPower() / 1000).toFixed(2)} kW`);
-console.log(`Megfelelő teljesítmény kategória: ${(myAirConditioner.getConditioner() / 1000).toFixed(2)} kW`);
+console.log(`Megfelelő teljesítmény kategória: ${(myAirConditioner.getConditioner() / 1000).toFixed(1)} kW`);
