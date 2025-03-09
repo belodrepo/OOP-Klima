@@ -81,8 +81,35 @@ class Cooler {
     }
 }
 
-const myCooler = new Cooler(6, 4, 2.4, 1);
+/*const myCooler = new Cooler(6, 4, 2.4, 1);
 console.log(`Számított légköbméter: ${myCooler.getRoomVolume().toFixed(2)} m3`);
 console.log(`Szigetelési besorolás: ${myCooler.getInsulationCategory()}`);
 console.log(`Szükséges hűtési teljesítmény: ${(myCooler.getCoolingPower() / 1000).toFixed(2)} kW`);
-console.log(`Szükséges fűtési teljesítmény: ${(myCooler.getHeatingPower() / 1000).toFixed(2)} kW`);
+console.log(`Szükséges fűtési teljesítmény: ${(myCooler.getHeatingPower() / 1000).toFixed(2)} kW`);*/
+
+class AirConditioner extends Cooler {
+    constructor(w, l, h, c) {
+        super(w, l, h, c);
+    }
+    standards = [2500, 3500, 5200, 7100, 10500, 14100];
+
+    getConditioner() {
+        let acceptedPower = 0;
+        let calculatedPower = this.getHeatingPower();
+        
+        for (let i = 0; i < this.standards.length; i++) {
+            if(this.standards[i] >= calculatedPower){
+                acceptedPower = this.standards[i];
+                break;
+            }
+        }
+        return acceptedPower;
+    }
+}
+const myAirConditioner = new AirConditioner(6, 4, 2.4, 2);
+
+console.log(`Számított légköbméter: ${myAirConditioner.getRoomVolume().toFixed(2)} m3`);
+console.log(`Szigetelési besorolás: ${myAirConditioner.getInsulationCategory()}`);
+console.log(`Szükséges hűtési teljesítmény: ${(myAirConditioner.getCoolingPower() / 1000).toFixed(2)} kW`);
+console.log(`Szükséges fűtési teljesítmény: ${(myAirConditioner.getHeatingPower() / 1000).toFixed(2)} kW`);
+console.log(`Megfelelő teljesítmény kategória: ${(myAirConditioner.getConditioner() / 1000).toFixed(2)} kW`);
